@@ -4,3 +4,5 @@
 - Using MySQLi create a database named rentomojoassignment
 - Create a table users having id,name,email and password field
 ### The index.html is the prototype that how the assignment will look
+![Prototype_IMAGE](prototype.png)
+Format: ![Alt Text](url)
