@@ -39,4 +39,7 @@ section{
 
 .upvote-downvote{
     margin-top: 14px;
+    font-size: 12px;    
+    color: #00000094;
+    font-weight: 600;
 }

@@ -1,3 +1,11 @@
+<?php
+require_once 'connection.php';
+session_start();
+include_once('login.php');
+include_once('register.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,11 +26,30 @@
     <div class="container py-4">
         <nav class="mb-5">
             <ul class="pr-3">
-                <li class="mr-3"><a class="cd-signin" href="#0" data-toggle="modal" data-target="#signin">Login</a></li>
-                <li><a class="cd-signup" href="#0" data-toggle="modal" data-target="#signup">Register</a></li>
+                <!-- 
+                <li><a class="cd-signup" href="#0" data-toggle="modal" data-target="#signup">Register</a></li> -->
+                <?php
+                if(isset($_SESSION['name']))
+                {
+                  
+                   echo "<li class=\"pr-4\">
+                            <a >"
+                              .$_SESSION['name']."
+                            </a>
+                            </li>
+                            <li class='nav-item'><a href=\"logout.php\">Logout</a></li>";
+
+                }
+                else
+                {
+                  echo "<li class='pr-4'><a data-toggle=\"modal\" data-target=\"#signin\">Login</a></li>";
+                  echo "<li class='pr-4'><a data-toggle=\"modal\" data-target=\"#signup\">SignUp</a></li>";
+                }
+              ?>
             </ul>
         </nav>
-        <main class="px-3">
+        
+        <main class="px-3 mt-4 pt-4">
             <form action="post">
                 <textarea class="form-control" name="comment" id="comment" rows="4"
                     placeholder="Type a Comment ....."></textarea>
@@ -31,73 +58,6 @@
         </main>
     </div>
 
-
-<!-- user login modal -->
-
-<div class="modal fade" id="signin" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" style="width: 400px;">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">User Login</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="useremail"
-                            autofocus required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd1" placeholder="Enter password"
-                            name="userpassword" required>
-                    </div>
-                    <button type="submit" class="btn btn-default text-center" name="login"
-                        style="background-color: green;color: white;font-family: sans-serif; margin-left: 145px;">Login</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- user register modal -->
-
-<div class="modal fade" id="signup" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" style="width: 400px;">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-center">User Signup</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="name" class="form-control" id="name" placeholder="Enter name" name="username"
-                            autofocus required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="useremail"
-                            autofocus required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd1" placeholder="Enter password"
-                            name="userpassword" required>
-                    </div>
-                    <button type="submit" class="btn btn-default text-center" name="login"
-                        style="background-color: green;color: white;font-family: sans-serif; margin-left: 145px;">Login</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
