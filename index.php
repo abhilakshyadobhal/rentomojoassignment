@@ -50,13 +50,14 @@ include_once('register.php');
         </nav>
         
         <main class="px-3 mt-4 pt-4">
-            <form action="post">
+            <form action="post" action="comment.php">
                 <textarea class="form-control" name="comment" id="comment" rows="4"
                     placeholder="Type a Comment ....."></textarea>
-                <input type="submit" value="Post Comment" name="submit" class="mt-4 float-right py-2 px-4 submit-btn">
+                <input type="submit" value="Post Comment" name="post_comment" class="mt-4 float-right py-2 px-4 submit-btn">
             </form> 
         </main>
     </div>
+
 
 
 
