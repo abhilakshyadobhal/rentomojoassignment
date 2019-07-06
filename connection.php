@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("db4free.net:3306","abhisr4","Dobhal@7","abhimojo");
+$connect = mysqli_connect("db4free.net:3306","abhimojo","Dobhal@7","abhimojo");
 
 // Check connection
 if (mysqli_connect_errno())
