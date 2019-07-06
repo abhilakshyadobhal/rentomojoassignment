@@ -18,3 +18,25 @@ nav ul li a:hover{
 .submit-btn{
     color: white; background: #ff0000db; border: 1px; border-radius: 5px;
 }
+
+section{
+    margin-top: 120px;
+}
+
+.commenter-details{
+    color: #00000094;
+}
+
+.commenter-id, .commenter-name{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.comment{
+    font-size: 14px;
+    color: #00000094;    
+}
+
+.upvote-downvote{
+    margin-top: 14px;
+}

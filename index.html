@@ -16,88 +16,141 @@
 
 <body>
     <div class="container py-4">
+
+        <!-- navbar section -->
         <nav class="mb-5">
             <ul class="pr-3">
                 <li class="mr-3"><a class="cd-signin" href="#0" data-toggle="modal" data-target="#signin">Login</a></li>
                 <li><a class="cd-signup" href="#0" data-toggle="modal" data-target="#signup">Register</a></li>
             </ul>
         </nav>
-        <main class="px-3">
+
+        <!-- comment post section -->
+        <main class="px-3 mb-5">
             <form action="post">
-                <textarea class="form-control" name="comment" id="comment" rows="6"
+                <textarea class="form-control" name="comment" id="comment" rows="5"
                     placeholder="Type a Comment ....."></textarea>
-                <input type="submit" value="Post Comment" name="submit" class="mt-4 float-right py-2 px-4 submit-btn">
-            </form> 
+                <input type="submit" value="Post Comment" name="submit" class=" mt-3 py-2 float-right px-3 submit-btn"
+                    style="font-size: 14px; font-weight: 500;">
+            </form>
         </main>
+
+        <!-- all comments section -->
+        <section class="px-4">
+            <div class="all-comments">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="commenter-details"><span class="commenter-id">1</span>.&nbsp<span
+                                class="commenter-name pl-2">Vikas Shukla</span></div>
+                        <div class="comment pl-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        </div>
+                    </div>
+                    <div class="col-md-3 px-5">
+                        <div class="upvote-downvote px-4">
+                            <div class="upvote">
+                                <button class="btn">
+                                    <i class="fas fa-thumbs-up" style="color: green;"></i>
+                                </button>
+                            </div>
+                            <div class="downvote pt-0 mt-0">
+                                <button class="btn">
+                                    <i class="fas fa-thumbs-down" style="color: red;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="commenter-details"><span class="commenter-id">1</span>.&nbsp<span
+                                class="commenter-name pl-2">Vikas
+                                Shukla</span></div>
+                        <div class="comment pl-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
 
-<!-- user login modal -->
+    <!-- user login modal -->
 
-<div class="modal fade" id="signin" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" style="width: 400px;">
+    <div class="modal fade" id="signin" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" style="width: 400px;">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">User Login</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="useremail"
-                            autofocus required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd1" placeholder="Enter password"
-                            name="userpassword" required>
-                    </div>
-                    <button type="submit" class="btn btn-default text-center" name="login"
-                        style="background-color: green;color: white;font-family: sans-serif; margin-left: 145px;">Login</button>
-                </form>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">User Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                name="useremail" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd1" placeholder="Enter password"
+                                name="userpassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-default text-center" name="login"
+                            style="background-color: green;color: white;font-family: sans-serif; margin-left: 145px;">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- user register modal -->
+    <!-- user register modal -->
 
-<div class="modal fade" id="signup" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" style="width: 400px;">
+    <div class="modal fade" id="signup" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" style="width: 400px;">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-center">User Signup</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="name" class="form-control" id="name" placeholder="Enter name" name="username"
-                            autofocus required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="useremail"
-                            autofocus required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd1" placeholder="Enter password"
-                            name="userpassword" required>
-                    </div>
-                    <button type="submit" class="btn btn-default text-center" name="login"
-                        style="background-color: green;color: white;font-family: sans-serif; margin-left: 145px;">Login</button>
-                </form>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">User Signup</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="name" class="form-control" id="name" placeholder="Enter name" name="username"
+                                autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                name="useremail" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd1" placeholder="Enter password"
+                                name="userpassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-default text-center" name="login"
+                            style="background-color: green;color: white;font-family: sans-serif; margin-left: 145px;">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

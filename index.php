@@ -24,7 +24,7 @@
         </nav>
         <main class="px-3">
             <form action="post">
-                <textarea class="form-control" name="comment" id="comment" rows="6"
+                <textarea class="form-control" name="comment" id="comment" rows="4"
                     placeholder="Type a Comment ....."></textarea>
                 <input type="submit" value="Post Comment" name="submit" class="mt-4 float-right py-2 px-4 submit-btn">
             </form> 
