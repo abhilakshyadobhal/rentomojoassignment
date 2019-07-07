@@ -216,6 +216,7 @@ session_start();
             $newuserpassword = mysqli_real_escape_string($connect,$_POST['newuserpassword']);
             $sql="INSERT INTO users(name, email, password)VALUES('$newusername', '$newuseremail','$newuserpassword')";
             $result=mysqli_query($connect,$sql);
+            $_SESSION['name']=  $newusername;
             echo "<script>location.href('index.php');</script>";
         }
     ?>
