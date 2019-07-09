@@ -61,11 +61,19 @@ require_once 'connection.php';
 
             $userpassword = $_POST['userpassword'];
 
-            $row = mysqli_fetch_array(mysqli_query($connect,"SELECT * FROM users WHERE email='$useremail' AND password='$userpassword'"));
-                
-            // $_SESSION['cart']=array();
-                
-            $_SESSION['name'] = $row['name'];
+            $result= mysqli_query($connect,"SELECT * FROM users WHERE email='$useremail' AND password='$userpassword'");
+
+            $row = mysqli_fetch_array($result);
+            
+            if(mysqli_num_rows($result)>0)
+            {   
+                $_SESSION['name'] = $row['name'];
+            }
+            
+            else
+            {
+                echo "<script>alert('Please enter correct username and password')</script>";
+            }
         }
     ?>
 
@@ -151,12 +159,21 @@ require_once 'connection.php';
             </form> 
             <?php
             if(isset($_POST['post_comment'])){
-                $name=$_SESSION['name'];
-                $comment=htmlspecialchars($_POST['comment']);
-                $upvote=0;
-                $downvote=0;
-                $sql="INSERT INTO comments(commentername,commentbody,upvotes,downvotes) VALUES ('$name', '$comment','$upvote','$downvote')";
-                $result=mysqli_query($connect,$sql);
+                if(isset($_SESSION['name']))
+                {
+                    $name=$_SESSION['name'];
+                    $comment=htmlspecialchars($_POST['comment']);
+                    $upvote=0;
+                    $downvote=0;
+                    $sql="INSERT INTO comments(commentername,commentbody,upvotes,downvotes) VALUES ('$name', '$comment','$upvote','$downvote')";
+                    $result=mysqli_query($connect,$sql);
+                }
+                else {
+            ?>
+
+                    <script>alert("PLEASE LOGIN")</script>
+            <?php
+                }
             }
             ?>            
         </main>
