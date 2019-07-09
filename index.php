@@ -121,6 +121,7 @@ require_once 'connection.php';
         }
     ?>
 
+
     <div class="container py-4">
         
     <nav class="mb-5">
@@ -135,7 +136,7 @@ require_once 'connection.php';
                             <a >"
                               .$_SESSION['name']."
                             </a>
-                            </li>
+                            </li> 
                             <li class='nav-item'><a href=\"logout.php\">Logout</a></li>";
 
                 }
