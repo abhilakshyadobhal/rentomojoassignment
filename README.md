@@ -4,5 +4,7 @@
 - Using MySQLi create a database named rentomojoassignment
 - Create a table users having id,name,email and password field
 ### The index.html is the prototype that how the assignment will look
+#### If the user hasn't logged in into the site he can't post a comment
+#### Furthermore if a user has signed up into the site he has to login again
 ![Prototype_IMAGE](prototype.png)
 Format: ![prototype](url)
